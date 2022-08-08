@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <h4>Selected model is </h4>
+        <h5  style="margin-left:25px">{{operations.5}}</h5>
+    <br>
+    <h4>Selected attack is:</h4>
+    <div class="attack" style="margin-left:25px">
+        {% if operations.0 != "" %}
+            <h5>{{ operations.0 }}</h5>
+        {% endif %}
+        {% if operations.1 != "" %}
+            <h5>{{ operations.1 }}</h5>
+        {% endif %}
+        {% if operations.2 != "" %}
+            <h5>{{ operations.2 }}</h5>
+        {% endif %}
+        {% if operations.3 != "" %}
+            <h5>{{ operations.3 }}</h5>
+        {% endif %}
+    </div>
+    <br>
+    <h4>Selected defence is </h4>
+    <div class="defence" style="margin-left:25px" >
+        {% if operations.4 != "" %}
+            <h5>{{ operations.4 }}</h5>
+        {% else %}
+            <h5>No defence selected </h5>
+        {% endif %}
+    </div>
+    <br>
+    
+    <br>
+    <br>
+    <a href="/processing" class="btn btn-primary">Proceed</a>
+</div>
+    
+{% endblock%}

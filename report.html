@@ -1,0 +1,70 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robustness Analyzer</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/zephyr/bootstrap.min.css">
+     <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js">
+    </script>
+</head>
+<body>
+    <div class="container" id="makepdf">
+    <br>
+    <center><h3>Robustness Analysis Report</h3></center>
+    <br>
+    <button class ="btn btn-primary" id="button">Generate PDF</button>
+    <br><br>
+    <p>Attack : Fast Gradient Sign Method Attack</p>
+    <p>Defense : Adversarial Training </p>
+    <p>Model : MNIST - Handwritten number classification model </p>
+    <br><br>
+    <p>Accuracy of the original model with clean dataset (100) : 100 %</p>
+    <p>Number of correct predictions : 100 </p>
+    <p>Number of incorrect predictions : 0 </p> <br><br>
+    <p>Accuracy of the original model with adversarial data generated (100) : 19 %</p>
+    <p>Number of correct predictions : 19 </p>
+    <p>Number of incorrect predictions : 81 </p> <br><br>
+    <p>Accuracy of the robust model with clean dataset trained with attacks (100) : 97 %</p>
+    <p>Number of correct predictions : 97 </p>
+    <p>Number of incorrect predictions : 3 </p> <br><br>
+    <p>Accuracy of the robust model with adversarial data generated (100) after defense : 35 % </p>
+    <p>Number of correct predictions : 35 </p>
+    <p>Number of incorrect predictions : 65 </p> <br><br>
+    <hr>
+    <center><h3>Graphical Representation of Robustness and Attacks applied</h3>
+    <img src="./FGSMevaluationAfter Defense.jpg" alt="Graph for attack strength vs correct predictions">
+   <div class="row">
+        <div class="col-md-4">
+            <p>Original image</p>
+            <img src="./original_image.jpg" alt="original image" height="200px" width="200px">
+        </div>
+        <div class="col-md-4">
+            <p>Image after attack</p>
+            <img src="./attacked_image.jpg" alt="image under attack"  height="200px" width="200px">
+        </div>
+        <div class="col-md-4">
+            <p>Image after defense</p>
+            <img src="./robust_image.jpg" alt="image after defense"  height="200px" width="200px">
+        </div>
+    </div>
+    <br><br><br><br>
+    </center>
+    </div>
+    
+</body>
+<script>
+    var button = document.getElementById('button');
+    var makepdf = document.getElementById('makepdf');
+    button.addEventListener('click', function () 
+    {
+        
+        window.print();
+    
+    });
+</script>
+</html>
+    

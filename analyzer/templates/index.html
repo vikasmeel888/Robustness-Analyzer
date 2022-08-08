@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container ">
+    <h3>The current framework is implemented for classification models.</h3>
+    <hr>
+    
+    <br><br>
+    <form action="" method="post" class="form-control">
+        {% csrf_token %}
+        <label for="attack" style="margin-bottom: 10px;">Select the model to test robustness</label><br>
+        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+            <input type="radio" class="btn-check" id="bt1" autocomplete="off" name="model" value="mnist" checked>
+            <label class="btn btn-outline-primary" for="bt1">MNIST - Handwritten number classification model</label>
+            <input type="radio" class="btn-check" id="bt2" autocomplete="off" name="model" value="cifar10">
+            <label class="btn btn-outline-primary" for="bt2">Cifar10 - random image classification model</label>
+        </div>
+        <br><br>
+
+        <label for="attack" style="margin-bottom: 10px;">Select the attacks to be applied on the model</label>
+        <br>
+        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+            <input type="radio" class="btn-check" id="btn1" autocomplete="off" name="attack" value="attack1" checked>
+            <label class="btn btn-outline-primary" for="btn1">Fast Gradient Sign Method Attack</label>
+            <input type="radio" class="btn-check" id="btn2" autocomplete="off" name="attack" value="attack2">
+            <label class="btn btn-outline-primary" for="btn2">Pixel Attack</label>
+            <input type="radio" class="btn-check" id="btn3" autocomplete="off" name="attack" value="attack3">
+            <label class="btn btn-outline-primary" for="btn3">Projected Gradient Descent Attack</label>
+            <input type="radio" class="btn-check" id="btn4" autocomplete="off" name="attack" value="attack4">
+            <label class="btn btn-outline-primary" for="btn4">DeepFool Attack</label>
+        </div>
+        <br>
+        <br>
+        <label for="defence" style="margin-bottom: 10px;">Select the defence to be applied on the model</label>
+        <br>
+        <input type="checkbox" class="btn-check" id="defence" autocomplete="off" name="defence1" checked>
+        <label class="btn btn-outline-primary" for="defence">Adversarial Training</label>
+        <br><br>
+        <!-- <label for="evaluation" style="margin-bottom: 10px;">Select the evaluation metrics</label>
+        <br>
+        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+            <input type="checkbox" class="btn-check" id="metric1" autocomplete="off" name="metric1">
+            <label class="btn btn-outline-primary" for="metric1">Metric 1</label>
+            <input type="checkbox" class="btn-check" id="metric2" autocomplete="off" name="metric2">
+            <label class="btn btn-outline-primary" for="metric2">Metric 2</label>
+            <input type="checkbox" class="btn-check" id="metric3" autocomplete="off" name="metric3">
+            <label class="btn btn-outline-primary" for="metric3">Metric 3</label>
+            <input type="checkbox" class="btn-check" id="metric4" autocomplete="off" name="metric4">
+            <label class="btn btn-outline-primary" for="metric4">Metric 4</label>
+        </div>
+        <br><br> -->
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+{% endblock%}
